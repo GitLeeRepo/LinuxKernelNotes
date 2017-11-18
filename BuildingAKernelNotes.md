@@ -7,7 +7,6 @@ Notes on building a Linux Kernel on an Ubuntu System
 * [Liinux Kernel Source](https://www.kernel.org/)
 * [Ubuntu Kernel Build Info](https://wiki.ubuntu.com/KernelTeam/GitKernelBuild)
 [Linux Kernel Newbies](https://kernelnewbies.org/)
-* [Linux From Scratch](http://www.linuxfromscratch.org/lfs/view/stable/) - Walkthough of building the LFS kernel
 
 ## Books
 
