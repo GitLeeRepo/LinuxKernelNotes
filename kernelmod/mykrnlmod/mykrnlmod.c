@@ -1,11 +1,12 @@
 // mykrnlmod.c
-// From: https://www.youtube.com/watch?v=Ni_FuuYmsHw&list=PLbzoR-pLrL6rr4Yn46TYDee--jzHhqdfQ&index=14
-//       from the Linux Foundation.  It is just an intro, not the full course, and does not
-//       have the full build details which are necessary to compile this, so at the moment
-//       this is not usable.
 //
-//       Once built it is loadable with 'sudo /sbin/insmod mykrnlmod.ko'
-//       and unloadable with 'sudo /sbin/rmmod mykrnlmod'
+//  Displays an initialization message upon loading the module, and an exit
+//  message when unloading the module.  These messages are viewed by the
+//  'dmsg' command without parameters.  To clear the kernel messages use
+//  'sudo dmsg -c', which will display them before clearing them.
+//
+//   Load with 'sudo insmod mykrnlmod.ko'
+//   Unload with 'sudo rmmod mykrnlmod'
 
 #include <linux/module.h>
 #include <linux/init.h>
