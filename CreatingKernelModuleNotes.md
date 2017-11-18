@@ -36,9 +36,9 @@ sudo rmmod mykrnlmod
 ```
 Note: no extension is used here, as it was with **insmod**.  You also do not need to provide a path if you are not in the directory.
 
-## dmsg
+## dmesg
 
-The **dmsg** command allows you to see messages written inside the kernel ring/space.  Very useful for viewing the output of your module.
+The **dmesg** command allows you to see messages written inside the kernel ring/space.  Very useful for viewing the output of your module.
 
 To display the messages:
 
@@ -72,15 +72,15 @@ clean:
 
 ## Simple Example
 
-This code simply prints a message on loading, and another message on unloading, they can be viewed using the **dmsg** command.
+This code simply prints a message on loading, and another message on unloading, they can be viewed using the **dmesg** command.
 
 ```c
 // mykrnlmod.c
 //
 //  Displays an initialization message upon loading the module, and an exit
 //  message when unloading the module.  These messages are viewed by the
-//  'dmsg' command without parameters.  To clear the kernel messages use
-//  'sudo dmsg -c', which will display them before clearing them.
+//  'dmesg' command without parameters.  To clear the kernel messages use
+//  'sudo dmesg -c', which will display them before clearing them.
 //
 //   Load with 'sudo insmod mykrnlmod.ko'
 //   Unload with 'sudo rmmod mykrnlmod'
@@ -89,12 +89,12 @@ This code simply prints a message on loading, and another message on unloading, 
 #include <linux/init.h>
 
 static int my_init(void) {
-    printk(KERN_INFO "pk:mykernlmod: module loaded at 0x%p\n", my_init);
+    printk(KERN_INFO "mykernlmod: module loaded at 0x%p\n", my_init);
     return 0;
 }
 
 static void my_exit(void) {
-    printk(KERN_INFO "pk:mykernlmod: module unloaded from 0x%p\n", my_init);
+    printk(KERN_INFO "mykernlmod: module unloaded from 0x%p\n", my_init);
 }
 
 module_init(my_init);
