@@ -44,7 +44,7 @@ Download and install the toolchain needed to build the kernel{
 sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache
 ```
 
-# Downalod Kernel
+# Download Kernel
 
 In general, it is preferable to download the kernel to a directory under your home directory, using your standard permissions.
 
