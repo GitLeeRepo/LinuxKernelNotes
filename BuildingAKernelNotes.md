@@ -130,7 +130,55 @@ Install the **\*.deb** packages, here is an example, but it needs to be changed 
 
 ```bash
 cd ..
-sudo dpkg -i linux-image-2.6.24-rc5-custom_2.6.24-rc5-custom-10.00.Custom_i386.deb
-sudo dpkg -i linux-headers-2.6.24-rc5-custom_2.6.24-rc5-custom-10.00.Custom_i386.deb
+sudo dpkg -i linux-image-4.14.0-tlk01a_4.14.0-tlk01a-1_amd64.deb
+sudo dpkg -i linux-headers-4.14.0-tlk01a_4.14.0-tlk01a-1_amd64.deb
+sudo dpkg -i linux-libc-dev_4.14.0-tlk01a-1_amd64.deb
 ```
 Note the **cd ..**, this is because the **\*.db** packages were placed on directory up in the hierarchy from where you ran the build.
+
+Optionally, install the debug kernel
+
+```bash
+sudo dpkg -i linux-image-4.14.0-tlk01a-dbg_4.14.0-tlk01a-1_amd64.deb
+```
+### Output from dpkg -i linux-image-4.14.0-tlk01a_4.14.0-tlk01a-1_amd64.deb
+
+Note how this will put the new kernel in the /boot directory and update the GRUB menu:
+
+```bash
+Selecting previously unselected package linux-image-4.14.0-tlk01a.
+(Reading database ... 123840 files and directories currently installed.)
+Preparing to unpack linux-image-4.14.0-tlk01a_4.14.0-tlk01a-1_amd64.deb ...
+Unpacking linux-image-4.14.0-tlk01a (4.14.0-tlk01a-1) ...
+Setting up linux-image-4.14.0-tlk01a (4.14.0-tlk01a-1) ...
+update-initramfs: Generating /boot/initrd.img-4.14.0-tlk01a
+WARNING: Setting CRYPTSETUP in /etc/initramfs-tools/initramfs.conf is deprecated and will stop
+ working in the future. Use /etc/cryptsetup-initramfs/conf-hook instead.
+Searching for GRUB installation directory ... found: /boot/grub
+Searching for default file ... found: /boot/grub/default
+Testing for an existing GRUB menu.lst file ... found: /boot/grub/menu.lst
+Searching for splash image ... none found, skipping ...
+Found kernel: /boot/vmlinuz-4.13.0-16-generic
+Found kernel: /boot/vmlinuz-4.14.0-tlk01a
+Found kernel: /boot/vmlinuz-4.13.0-16-generic
+Replacing config file /run/grub/menu.lst with new version
+Updating /boot/grub/menu.lst ... done
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-4.14.0-tlk01a
+Found initrd image: /boot/initrd.img-4.14.0-tlk01a
+Found linux image: /boot/vmlinuz-4.13.0-16-generic
+Found initrd image: /boot/initrd.img-4.13.0-16-generic
+done
+```
+
+## Reboot into New Kernel
+
+Reboot into the new kernel after that packages above are installed.  In my case the GRUB menu only displayed for about 1 second (it previously was about 5) before booting into the new kernel.  I rebooted a second time to verify that the previous kernel was still selectable and bootable.
+
+# Kernel Install History
+
+
+Date/Time        | Kernel Installed | Built on System          | Build Time | Processors | Image     | Issues
+-----------------|------------------|--------------------------|------------|------------|-----------|--------
+2017-11-17 23:58 | vmlinuz-4.14.0   | Ubuntu vmlinuz-4.13.0-16 | 55 minutes | 8          | Hyerper-V | None 
+
