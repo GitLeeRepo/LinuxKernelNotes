@@ -17,3 +17,8 @@ Notes on the Linux Kernel, Modules, and Device drivers
 
 * [BuildingAKernelNotes](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/BuildingAKernelNotes.md#overview)
 * [LinuxSysProgNotes](https://github.com/GitLeeRepo/LinuxSysProgNotes/blob/master/LinuxSysProgNotes.md#overview)
+
+# Terminology and Concepts
+
+Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelGlosssaryConcepts.md#overview) document.
+
