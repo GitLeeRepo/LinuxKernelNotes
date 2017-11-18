@@ -32,8 +32,10 @@ Notes on building a Linux Kernel on an Ubuntu System
 Note some of these definitions are copied from [https://kernelnewbies.org/KernelGlossary](https://kernelnewbies.org/KernelGlossary)
 
 * **ABI** - Application Binary Interface, the interface of passed structures between the user processes (and libraries) and the kernel. For compatibility, it is important that these remain as static as possible (i.e. making sure that variables and structure members have the same bytesize as before, and in the same ordering). Occasionally breakage is necessary, requiring re-compilation of the user-space sources (note that this does not affect source-compatibility; that is a separate issue).
+* **Logical Processor** - on an Intel processor this is the number of cores, times the number of hyper threads per core.  So an 8 core system, with 2 hyper threads per core would be a total of 16 logical processors.  See **Virtual Processor** for a virtual machine environment.
 * **Mainline** - vanilla Linux Kernel, without any vendor/distribution specific code or drivers. This branch is officially released as a new version approximately every ten weeks.  This is not the same as the **stable version**, which has been more thoroughly tested over a longer period, but doesn't have the latest features and fixes that the **mainline** version has.
 * **MMU** - Memory Management Unit, part of the CPU hardware that enforces memory boundaries, and throw page faults, upon which the OS builds its coherent protection. The MMU maps virtual memory to actual, where protections allow
+* **Virtual Processor** = on a Hyper-V image you can have up to the total number of logical processors on your host (cores + hyper threads).  This total includes all virtual machines currently running, so if you have 16 logical host processors, you can have one virtual machine with 16 virtual processors, or two virtual machines with 8 virtual processors each, etc.  See **Logical Processor**
 
 # Prereqisites
 
@@ -63,7 +65,7 @@ The kernel code is in a tarball compressed with xz compression.  To extract use 
 tar xf <kernel>.tar.xz
 ```
 
-## Kernel Config File
+# Kernel Config File
 
 Copy your existing kernel config file to the root of your source tree to be used as a template for the new build:
 
@@ -82,4 +84,17 @@ or automatically accept all defaults:
 ```bash
 yes '' | make <config file>
 ```
+
+# The Build
+
+The build is a lengthy process, so dedicate as many processesor to your machine as feasible (on a Hyper-V image you can have up to the total number of logical processors on your host (cores + hyper threads).  This total includes all virtual machines currently running, so if you have 16 logical host processors, you can have one virtual machine with 16 virtual processors, or two virtual machines with 8 virtual processors each, etc.
+
+To see the number of processors (including logical/virtual) the systems is running on:
+
+```bash
+nproc
+```
+For example, his would show 8, if this is running on a virtual machine with 8 virtual processors.
+
+
 
