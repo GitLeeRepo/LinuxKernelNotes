@@ -51,6 +51,23 @@ To display the messages and then clear all existing messages:
 sudo dmesg -c
 ```
 
+# Compiling the Module
+
+The compile process needs access to the kernel source tree.  This is best done with a make file that has a reference to this directory.  Here is an example of a simple make file to do this:
+
+```bash
+obj-m += mykrnlmod.o
+
+KDIR=/home/tracy/source/kernel/linux-4.14
+
+all:
+	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
+
+clean:
+	rm -rf *.o *.ko *.mod.* *.symvers *.order
+
+```
+
 # Examples
 
 ## Simple Example
