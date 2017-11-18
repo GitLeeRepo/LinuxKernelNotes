@@ -175,6 +175,12 @@ done
 
 Reboot into the new kernel after that packages above are installed.  In my case the GRUB menu only displayed for about 1 second (it previously was about 5) before booting into the new kernel.  I rebooted a second time to verify that the previous kernel was still selectable and bootable.
 
+Run the following to verify you are in the new kernel:
+
+```bash
+uname -a
+```
+
 # Kernel Install History
 
 
