@@ -12,6 +12,7 @@ Notes on the Linux Kernel, Modules, and Device drivers
 
 * [Building the Simplest Possible Linux System](https://www.youtube.com/watch?v=Sk9TatW9ino&t=6330s)
 * [Syscalls, Kernel vs. User Mode and Linux Kernel Source Code](https://www.youtube.com/watch?v=fLS99zJDHOc)
+* [Kernel Mode Memory Allocation](https://www.youtube.com/watch?v=1Y3Ot5xFZDA&list=PL2TXDotVKyDBEfWSKcePqRRCp9EehqDGF)
 
 # My Other Notes
 
