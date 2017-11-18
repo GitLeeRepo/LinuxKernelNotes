@@ -73,22 +73,30 @@ Copy your existing kernel config file to the root of your source tree to be used
 cp /boot/config-`uname -r` .config
 ```
 
-Modify this configuration using make, by responding to the prompts (safe to take the defaults):
+Modify this configuration using make (note **oldconfig** is the actual name to use, don't replace this), by responding to the prompts (safe to take the defaults):
 
 ```bash
-make <config file>
+make oldconfig
 ```
 
 or automatically accept all defaults:
 
 ```bash
-yes '' | make <config file>
+yes '' | make oldconfig
 ```
+
+To make any additional changes (optional) to the config run:
+
+```bash
+make menuconfig
+```
+Note: menuconfig is just one option, it is a curses full screen text version.  **make config** is a plain text version, **make xconfig** is a graphical Qt base version, and **make gconfig** is a graphical based GTK+ version.
 
 # The Build
 
 The build is a lengthy process, so dedicate as many processesor to your machine as feasible (on a Hyper-V image you can have up to the total number of logical processors on your host (cores + hyper threads).  This total includes all virtual machines currently running, so if you have 16 logical host processors, you can have one virtual machine with 16 virtual processors, or two virtual machines with 8 virtual processors each, etc.
 
+## Pre Check
 To see the number of processors (including logical/virtual) the systems is running on:
 
 ```bash
@@ -96,5 +104,33 @@ nproc
 ```
 For example, his would show 8, if this is running on a virtual machine with 8 virtual processors.
 
+## Clean up
 
+To ensure their are no other prior build files or dependencies
 
+```bash
+make clean
+
+make mrproper
+```
+Note: **make clean** is per Ubuntu docs, and **make mrproper*** is per the kernel's README
+
+## The Build itself
+
+This will take a very long time (as long as an hour+)
+
+```bash
+make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-custom
+```
+The **deg-pkg** tells what type of packages to use, and **LOCALVERSIN=custom** says to use the **custom** label as part of the package names (you can change this to whatever you want).
+
+## Install the packages
+
+Install the **\*.deb** packages, here is an example, but it needs to be changed for the specific versions involved
+
+```bash
+cd ..
+sudo dpkg -i linux-image-2.6.24-rc5-custom_2.6.24-rc5-custom-10.00.Custom_i386.deb
+sudo dpkg -i linux-headers-2.6.24-rc5-custom_2.6.24-rc5-custom-10.00.Custom_i386.deb
+```
+Note the **cd ..**, this is because the **\*.db** packages were placed on directory up in the hierarchy from where you ran the build.
