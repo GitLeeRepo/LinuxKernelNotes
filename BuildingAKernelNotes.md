@@ -30,6 +30,10 @@ Notes on building a Linux Kernel on an Ubuntu System
 
 Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelGlosssaryConcepts.md#overview) document.
 
+# Importand Directories
+
+Refer to my separate [KernelRelatedDirectories](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelRelatedDirectories.md#important-directories) docuement
+
 # Prereqisites
 
 Download and install the toolchain needed to build the kernel{
