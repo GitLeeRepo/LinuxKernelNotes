@@ -32,7 +32,7 @@ Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNo
 
 # Importand Directories
 
-Refer to my separate [KernelRelatedDirectories](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelRelatedDirectories.md#important-directories) docuement
+Refer to my separate [KernelRelatedDirectories](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelRelatedDirectories.md#important-directories) document
 
 # Prereqisites
 
