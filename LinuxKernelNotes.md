@@ -23,3 +23,7 @@ Notes on the Linux Kernel, Modules, and Device drivers
 
 Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelGlosssaryConcepts.md#overview) document.
 
+# Importand Directories
+
+Refer to my separate [KernelRelatedDirectories](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelRelatedDirectories.md#important-directories) document
+
