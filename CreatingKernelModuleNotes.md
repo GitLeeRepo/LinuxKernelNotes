@@ -16,6 +16,10 @@ Notes on creating device drivers and kernel modules
 
 Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelGlosssaryConcepts.md#overview) document.
 
+# Important Directories and Files
+
+Refer to my separate [KernelDirectoriesAndFiles](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelDirectoriesAndFiles.md#overview) document
+
 # Tools
 
 ## insmod
