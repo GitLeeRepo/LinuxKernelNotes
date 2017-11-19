@@ -30,9 +30,9 @@ Notes on building a Linux Kernel on an Ubuntu System
 
 Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelGlosssaryConcepts.md#overview) document.
 
-# Importand Directories
+# Importand Directories and Files
 
-Refer to my separate [KernelRelatedDirectories](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelRelatedDirectories.md#important-directories) document
+Refer to my separate [KernelDirectoriesAndFiles](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelDirectoriesAndFiles.md#overview) document
 
 # Prereqisites
 
