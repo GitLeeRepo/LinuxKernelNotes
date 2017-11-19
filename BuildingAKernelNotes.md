@@ -182,6 +182,20 @@ uname -a
 
 The GRUB related files are found in the **/boot/** directory, along with kernel, initrd, and other files.  The **/boot/grub/grub.cfg** contains the grub menu, along with the commands need to boot various operating system.  Do not change this, instead make changes in **/etc/default/grub** and the **/etc/grub.d/\*** files.  That way any changes you make won't be overwritten the next time a new kernel is added.  The **/etc/default/grub** - is where you should make changes to GRUB, such as menu timeout, while custom menu changes and addtions should be made to the files in the **/etc/grub.d/** directory.  Ater making changes in these files run **sudo update-grub** to apply the changes to the **/boot/grub/grub.cfg** file.  
 
+# The initrd Initial Root File System
+
+The **initrd** is the boot loader initialized RAM disk. It is a gzipped cpio arcive that has a minimal root file system.  It is is the initial root file system the boot loader loads into memory just before loading the kernel.  The kernel then uses this initial root file system to load drivers and then mount the actual root file system.
+
+## Examining the Contents of the initrd RAM Disk File System
+
+Because the **initrd** is a gzipped cpio archive, it can be unzipped and extracted.
+
+* Copy the **initrd** file from the /boot folder (it will have a name such as, **initrd.img-4.14.0-default** to a temporary directory, giving the file a **\*.gz gzip** extension
+* Run **gunzip initrd.img-4.14.0-default** to unzip to the cpio archive file
+* Run **sudo cpio -i < initrd.img-4.14.0-default** to extract the files and directories from the **cpio** archive.
+
+You can now see what file are initially used by the kernel as it is booting up.
+
 # Kernel Install History
 
 
