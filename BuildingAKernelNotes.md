@@ -178,6 +178,10 @@ Run the following to verify you are in the new kernel:
 uname -a
 ```
 
+# GRUB Related
+
+The GRUB related files are found in the **/boot/** directory, along with kernel, initrd, and other files.  The **/boot/grub/grub.cfg** contains the grub menu, along with the commands need to boot various operating system.  Do not change this, instead make changes in **/etc/default/grub** and the **/etc/grub.d/\*** files.  That way any changes you make won't be overwritten the next time a new kernel is added.  The **/etc/default/grub** - is where you should make changes to GRUB, such as menu timeout, while custom menu changes and addtions should be made to the files in the **/etc/grub.d/** directory.  Ater making changes in these files run **sudo update-grub** to apply the changes to the **/boot/grub/grub.cfg** file.  
+
 # Kernel Install History
 
 
