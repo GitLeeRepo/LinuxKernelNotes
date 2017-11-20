@@ -198,7 +198,7 @@ Because the **initrd** is a gzipped cpio archive, it can be unzipped and extract
 * Run **gunzip initrd.img-4.14.0-default** to unzip to the cpio archive file
 * Run **sudo cpio -i < initrd.img-4.14.0-default** to extract the files and directories from the **cpio** archive.
 
-You can now see what file are initially used by the kernel as it is booting up.
+You can now see what file are initially used by the kernel as it is booting up.  One of the most interesting files to look at is the **init** script in the root.  This shows the process of bringing up the os, establishing /proc, /dev, /sys, /tmp directories, calling other scripts, and moving things from the virtual file system to the real file system
 
 ## Using provided defconfigs for configuring the build
 
