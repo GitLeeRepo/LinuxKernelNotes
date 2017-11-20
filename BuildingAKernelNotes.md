@@ -178,15 +178,19 @@ Run the following to verify you are in the new kernel:
 uname -a
 ```
 
-# GRUB Related
+# Additional Information
+
+This is additional information for understanding the build process.  It is not necessary for doing the build described in the initial sections, but can provide useful information for customizing future builds.
+
+## GRUB Related
 
 The GRUB related files are found in the **/boot/** directory, along with kernel, initrd, and other files.  The **/boot/grub/grub.cfg** contains the grub menu, along with the commands need to boot various operating system.  Do not change this, instead make changes in **/etc/default/grub** and the **/etc/grub.d/\*** files.  That way any changes you make won't be overwritten the next time a new kernel is added.  The **/etc/default/grub** - is where you should make changes to GRUB, such as menu timeout, while custom menu changes and addtions should be made to the files in the **/etc/grub.d/** directory.  Ater making changes in these files run **sudo update-grub** to apply the changes to the **/boot/grub/grub.cfg** file.  
 
-# The initrd Initial Root File System
+## The initrd Initial Root File System
 
 The **initrd** is the boot loader initialized RAM disk. It is a gzipped cpio arcive that has a minimal root file system.  It is is the initial root file system the boot loader loads into memory just before loading the kernel.  The kernel then uses this initial root file system to load drivers and then mount the actual root file system.
 
-## Examining the Contents of the initrd RAM Disk File System
+### Examining the Contents of the initrd RAM Disk File System
 
 Because the **initrd** is a gzipped cpio archive, it can be unzipped and extracted.
 
@@ -195,6 +199,18 @@ Because the **initrd** is a gzipped cpio archive, it can be unzipped and extract
 * Run **sudo cpio -i < initrd.img-4.14.0-default** to extract the files and directories from the **cpio** archive.
 
 You can now see what file are initially used by the kernel as it is booting up.
+
+## Using provided defconfigs for configuring the build
+
+To get a starting configuration, you can use an existing defconfig as the template for your make config.  To see what is available for your system enter:
+
+```bash
+make help | grep defconfig
+```
+
+This will give you a list that applies to the architectures available to you (assuming you haven't set up cross platform compiling).
+
+This is similar to what I did in my first build here, except I got my initial configuration from copying it from the  /boot/config using the Ubuntu config for my os version.
 
 # Kernel Install History
 
