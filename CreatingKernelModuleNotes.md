@@ -6,7 +6,7 @@ Notes on creating device drivers and kernel modules
 
 ## Books
 
-* [Linux Device Drivers, 3rd Edition](https://www.amazon.com/Linux-Device-Drivers-Jonathan-Corbet/dp/0596005903/ref=cm_cr_arp_d_product_top?ie=UTF8).  The free ppf version of this O'Reilly book available [here](https://lwn.net/Kernel/LDD3/).
+* [Linux Device Drivers, 3rd Edition](https://www.amazon.com/Linux-Device-Drivers-Jonathan-Corbet/dp/0596005903/ref=cm_cr_arp_d_product_top?ie=UTF8).  The free ppf version of this O'Reilly book by Greg Kroah-Hartman, et al, available [here](https://lwn.net/Kernel/LDD3/).
 
 ## YouTube Videos
 
