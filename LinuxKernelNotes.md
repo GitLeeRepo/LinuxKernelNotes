@@ -27,3 +27,10 @@ Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNo
 
 Refer to my separate [KernelDirectoriesAndFiles](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelDirectoriesAndFiles.md#overview) document
 
+# Interesting Kernel Code to Study
+
+Directory                     | File              | Description 
+------------------------------|-------------------|------------------------------------------------------------------------
+init                          | main.c            | Early boot process, starts init
+init                          | initramefs.c      | Early boot process, load initramfs
+intit                         | do_mounts.c       | Early boot process, load ramdisk, mount & init root 
