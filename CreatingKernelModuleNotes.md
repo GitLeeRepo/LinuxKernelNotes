@@ -64,6 +64,18 @@ List modules, their size, how many times it's used and by what
 lsmod | sort | less
 ```
 
+## custom shell script to list module files \*.ko
+
+```bash
+#!/bin/bash
+#
+# find_all_modules.sh
+# From Chapter 7 of Linux Kernel in a Nutshell
+#
+for i in `find /sys/ -name modalias -exec cat {} \;`; do
+/sbin/modprobe --config /dev/null --show-depends $i ;
+done | rev | cut -f 1 -d '/' | rev | sort -u
+```
 # Compiling the Module
 
 The compile process needs access to the kernel source tree.  This is best done with a make file that has a reference to this directory.  Here is an example of a simple make file to do this:
