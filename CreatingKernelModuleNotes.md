@@ -11,6 +11,7 @@ Notes on creating device drivers and kernel modules
 ## YouTube Videos
 
 * [Syscalls, Kernel vs. User Mode and Linux Kernel Source Code](https://www.youtube.com/watch?v=fLS99zJDHOc)
+* [Linux kernel driver writing tutorial (USB)](https://www.youtube.com/watch?v=CqDUfiH2PzQ) by Greg Kroah-Hartman
 
 # Terminology and Concepts
 
@@ -53,6 +54,14 @@ To display the messages and then clear all existing messages:
 
 ```bash
 sudo dmesg -c
+```
+
+## lsmod
+
+List modules, their size, how many times it's used and by what
+
+```bash
+lsmod | sort | less
 ```
 
 # Compiling the Module
