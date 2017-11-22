@@ -23,9 +23,20 @@ Notes on the Linux Kernel, Modules, and Device drivers
 
 Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelGlosssaryConcepts.md#overview) document.
 
-# Importand Directories and Files
+# Important Directories and Files
 
 Refer to my separate [KernelDirectoriesAndFiles](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelDirectoriesAndFiles.md#overview) document
+
+# Kernel Documentation
+
+This section is a reference to the kernel documentation in the kernel source tree itself.
+
+
+Subdirectory of Documentation | Document Name     | Comment
+------------------------------|-------------------|----------------------------------------------------------------
+/                             | index.rst         | Starting point Index to other documents
+/process                      | index.rst         | Links to docs on the the process of developing for the kernel
+/process                      | howto.rst         | Good overview of the process of developing for the kernel
 
 # Interesting Kernel Code to Study
 
