@@ -41,6 +41,10 @@ sudo rmmod mykrnlmod
 ```
 Note: no extension is used here, as it was with **insmod**.  You also do not need to provide a path if you are not in the directory.
 
+## modprobe
+
+Adds and removes modules from the kernel.  Provides more options than **insmod** and **rmmod**.  Used in **/etc/init.d/kmod** to load kernel modules from **/etc/modules** (altough mine was empty, so it may not do this anymore)
+
 ## dmesg
 
 The **dmesg** command allows you to see messages written inside the kernel ring/space.  Very useful for viewing the output of your module.
