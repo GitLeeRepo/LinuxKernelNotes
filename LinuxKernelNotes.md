@@ -29,8 +29,14 @@ Refer to my separate [KernelDirectoriesAndFiles](https://github.com/GitLeeRepo/L
 
 # Interesting Kernel Code to Study
 
+**KEY**
+* EBP - Early Boot Process
+
 Directory                     | File              | Description 
 ------------------------------|-------------------|------------------------------------------------------------------------
-init                          | main.c            | Early boot process, starts init
-init                          | initramefs.c      | Early boot process, load initramfs
-intit                         | do_mounts.c       | Early boot process, load ramdisk, mount & init root 
+arch/x86/boot                 | main.c            | EBP, Real mode boot code, calls to protected mode at end
+arch/x86/boot                 | pm.c              | EBP, disables intrupts and switches to protected mode
+arch/x86/include/uapi/asm     | boot_parms.h      | EBP, header defining boot_parms struct
+init                          | main.c            | EBP, starts init
+init                          | initramefs.c      | EBP, load initramfs
+intit                         | do_mounts.c       | EBP, load ramdisk, mount & init root 
