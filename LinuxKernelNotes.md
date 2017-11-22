@@ -31,12 +31,14 @@ Refer to my separate [KernelDirectoriesAndFiles](https://github.com/GitLeeRepo/L
 
 **KEY**
 * EBP - Early Boot Process
+* MOD - Module related
 
 Directory                     | File              | Description 
 ------------------------------|-------------------|------------------------------------------------------------------------
 arch/x86/boot                 | main.c            | EBP, Real mode boot code, calls to protected mode at end
 arch/x86/boot                 | pm.c              | EBP, disables intrupts and switches to protected mode
-arch/x86/include/uapi/asm     | boot_parms.h      | EBP, header defining boot_parms struct
+arch/x86/include/uapi/asm     | bootparms.h       | EBP, header defining boot_parms struct
 init                          | main.c            | EBP, starts init
 init                          | initramefs.c      | EBP, load initramfs
 intit                         | do_mounts.c       | EBP, load ramdisk, mount & init root 
+kernel                        | module.c          | MOD, manages, loads, unloads modules
