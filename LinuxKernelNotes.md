@@ -45,6 +45,7 @@ Subdirectory of Documentation | Document Name     | Comment
 **KEY**
 * EBP - Early Boot Process
 * MOD - Module related
+* SCHED - Scheduler
 
 Directory                     | File              | Description 
 ------------------------------|-------------------|------------------------------------------------------------------------
@@ -57,4 +58,5 @@ arch/x86/include/uapi/asm     | bootparms.h       | EBP, header defining boot_pa
 init                          | main.c            | EBP, contains start_kernel, starts init
 init                          | initramefs.c      | EBP, load initramfs
 intit                         | do_mounts.c       | EBP, load ramdisk, mount & init root 
+kernel/sched                  | core.c            | SCHED, Core kernel scheduler code and related syscalls
 kernel                        | module.c          | MOD, manages, loads, unloads modules
