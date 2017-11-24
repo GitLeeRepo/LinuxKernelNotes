@@ -4,6 +4,8 @@ Notes on the Linux Kernel, Modules, and Device drivers
 
 # References
 
+* [Linux Cross Reference](http://elixir.free-electrons.com/linux/latest/source) - website cross reference of current code, back to version 2.6.
+
 ## Books
 
 * [Linux Kernel Development 3rd Ed](https://www.amazon.com/Linux-Kernel-Development-Robert-Love/dp/0672329468/ref=cm_cr_arp_d_product_top?ie=UTF8)
