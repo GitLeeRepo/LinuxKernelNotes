@@ -48,7 +48,8 @@ Subdirectory of Documentation | Document Name     | Comment
 
 Directory                     | File              | Description 
 ------------------------------|-------------------|------------------------------------------------------------------------
-arch/x86/kernel               | head32.c          | ERP, has i386_start_kernel, which calls /init/main.c/start_kernel
+arch/x86/xen/                 | enlighten_pv.c    | EBP, \_init "start the world", calls i386_start_kernel & x86_64_start_
+arch/x86/kernel               | head32.c          | EBP, has i386_start_kernel, which calls /init/main.c/start_kernel
 arch/x86/kernel               | head64.c          | EBP, has x86_64_start_kernel, which calls /init/main.c/start_kernel
 arch/x86/boot                 | main.c            | EBP, Real mode boot code, calls to protected mode at end
 arch/x86/boot                 | pm.c              | EBP, disables intrupts and switches to protected mode
