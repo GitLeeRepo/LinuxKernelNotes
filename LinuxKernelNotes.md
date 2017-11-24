@@ -48,10 +48,12 @@ Subdirectory of Documentation | Document Name     | Comment
 
 Directory                     | File              | Description 
 ------------------------------|-------------------|------------------------------------------------------------------------
+arch/x86/kernel               | head32.c          | ERP, has i386_start_kernel, which calls /init/main.c/start_kernel
+arch/x86/kernel               | head64.c          | EBP, has x86_64_start_kernel, which calls /init/main.c/start_kernel
 arch/x86/boot                 | main.c            | EBP, Real mode boot code, calls to protected mode at end
 arch/x86/boot                 | pm.c              | EBP, disables intrupts and switches to protected mode
 arch/x86/include/uapi/asm     | bootparms.h       | EBP, header defining boot_parms struct
-init                          | main.c            | EBP, starts init
+init                          | main.c            | EBP, contains start_kernel, starts init
 init                          | initramefs.c      | EBP, load initramfs
 intit                         | do_mounts.c       | EBP, load ramdisk, mount & init root 
 kernel                        | module.c          | MOD, manages, loads, unloads modules
