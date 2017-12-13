@@ -6,7 +6,7 @@ Notes on creating device drivers and kernel modules
 
 ## Books
 
-* [Linux Device Drivers, 3rd Edition](https://www.amazon.com/Linux-Device-Drivers-Jonathan-Corbet/dp/0596005903/ref=cm_cr_arp_d_product_top?ie=UTF8).  The free ppf version of this O'Reilly book by Greg Kroah-Hartman, et al, available [here](https://lwn.net/Kernel/LDD3/).
+* [Linux Device Drivers, 3rd Edition](https://www.amazon.com/Linux-Device-Drivers-Jonathan-Corbet/dp/0596005903/ref=cm_cr_arp_d_product_top?ie=UTF8).  The free pdf version of this O'Reilly book by Greg Kroah-Hartman, et al, available [here](https://lwn.net/Kernel/LDD3/).
 
 ## YouTube Videos
 
@@ -30,7 +30,7 @@ You use **insmod** to load a kernel module
 ```bash
 sudo insmod mykrnlmod.ko
 ```
-Assumes you are in the directory for mykrnlmod.o, oherwise provide the path
+Assumes you are in the directory for mykrnlmod.o, otherwise provide the path
 
 ## rmmod
 
@@ -43,7 +43,7 @@ Note: no extension is used here, as it was with **insmod**.  You also do not nee
 
 ## modprobe
 
-Adds and removes modules from the kernel.  Provides more options than **insmod** and **rmmod**.  Used in **/etc/init.d/kmod** to load kernel modules from **/etc/modules** (altough mine was empty, so it may not do this anymore)
+Adds and removes modules from the kernel.  Provides more options than **insmod** and **rmmod**.  Used in **/etc/init.d/kmod** to load kernel modules from **/etc/modules** (although mine was empty, so it may not do this anymore)
 
 ## dmesg
 

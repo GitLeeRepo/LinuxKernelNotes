@@ -4,7 +4,7 @@ Notes on building a Linux Kernel on an Ubuntu System
 
 # References
 
-* [Liinux Kernel Source](https://www.kernel.org/)
+* [Linux Kernel Source](https://www.kernel.org/)
 * [Ubuntu Kernel Build Info](https://wiki.ubuntu.com/KernelTeam/GitKernelBuild)
 [Linux Kernel Newbies](https://kernelnewbies.org/)
 
@@ -30,11 +30,11 @@ Notes on building a Linux Kernel on an Ubuntu System
 
 Refer to my [KernelGlosssaryConcept](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelGlosssaryConcepts.md#overview) document.
 
-# Importand Directories and Files
+# Important Directories and Files
 
 Refer to my separate [KernelDirectoriesAndFiles](https://github.com/GitLeeRepo/LinuxKernelNotes/blob/master/KernelDirectoriesAndFiles.md#overview) document
 
-# Prereqisites
+# Prerequisites
 
 Download and install the toolchain needed to build the kernel{
 
@@ -91,7 +91,7 @@ Note: menuconfig is just one option, it is a curses full screen text version.  *
 
 # The Build
 
-The build is a lengthy process, so dedicate as many processesor to your machine as feasible (on a Hyper-V image you can have up to the total number of logical processors on your host (cores + hyper threads).  This total includes all virtual machines currently running, so if you have 16 logical host processors, you can have one virtual machine with 16 virtual processors, or two virtual machines with 8 virtual processors each, etc.
+The build is a lengthy process, so dedicate as many processors to your machine as feasible (on a Hyper-V image you can have up to the total number of logical processors on your host (cores + hyper threads).  This total includes all virtual machines currently running, so if you have 16 logical host processors, you can have one virtual machine with 16 virtual processors, or two virtual machines with 8 virtual processors each, etc.
 
 ## Pre Check
 To see the number of processors (including logical/virtual) the systems is running on:
